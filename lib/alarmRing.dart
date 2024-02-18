@@ -20,8 +20,8 @@ class AlarmRingPage extends StatefulWidget {
 class _AlarmRingPageState extends State<AlarmRingPage> {
   final _formKey = GlobalKey<FormState>();
   final player = AudioCache();
-  AudioPlayer advancedPlayer;
-  String _remarks, _password, _dateString, _timeString;
+  late AudioPlayer advancedPlayer;
+  late String _remarks, _password, _dateString, _timeString;
 
   void initialiseDetails() async {
     await Storage.getAlarmDetails(widget.payload).then((document) {

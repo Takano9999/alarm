@@ -5,15 +5,14 @@ import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_alarm/util/notificationUtil.dart';
-import 'package:flutter_alarm/util/widgetsUtil.dart';
+import 'package:alarm/util/notificationUtil.dart';
+import 'package:alarm/util/widgetsUtil.dart';
 import 'storage.dart';
 import 'main.dart';
 
 class EditAlarmPage extends StatefulWidget {
-  EditAlarmPage({Key key, this.documentId}) : super(key: key);
-
   final String documentId;
+  EditAlarmPage({super.key, required this.documentId});
 
   @override
   _EditAlarmPageState createState() => _EditAlarmPageState();
@@ -21,10 +20,10 @@ class EditAlarmPage extends StatefulWidget {
 
 class _EditAlarmPageState extends State<EditAlarmPage> {
   final _formKey = GlobalKey<FormState>();
-  String _dateString, _timeString;
-  DateTime _date, _time;
-  String _remarks;
-  String _password;
+  late String _dateString, _timeString;
+  late DateTime _date, _time;
+  late String _remarks;
+  late String _password;
 
   void inititaliseDetails() async {
     await Storage.getAlarmDetails(widget.documentId).then((document) {
