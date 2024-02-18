@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:vibration/vibration.dart';
 
 class AlarmRingPage extends StatefulWidget {
-  AlarmRingPage({Key key, required this.payload}) : super(key: key);
+  AlarmRingPage({super.key, required this.payload});
 
   final String payload;
 
