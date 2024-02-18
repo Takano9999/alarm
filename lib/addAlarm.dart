@@ -11,7 +11,7 @@ import 'main.dart';
 import 'storage.dart';
 
 class AddAlarmPage extends StatefulWidget {
-  AddAlarmPage({Key key}) : super(key: key);
+  const AddAlarmPage({super.key});
 
   @override
   _AddAlarmPageState createState() => _AddAlarmPageState();

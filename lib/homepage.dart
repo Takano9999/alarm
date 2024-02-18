@@ -5,9 +5,8 @@ import 'alarmsList.dart';
 import "settings.dart";
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-
   final String title;
+  HomePage({super.key, required this.title});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -40,7 +39,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.bottom]);
 
     return Scaffold(
       body: PageView(
