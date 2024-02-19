@@ -26,9 +26,9 @@ class _AlarmRingPageState extends State<AlarmRingPage> {
   void initialiseDetails() async {
     await Storage.getAlarmDetails(widget.payload).then((document) {
       setState(() {
-        this._remarks = document.get('remarks');
-        this._password = document.get('password');
-        this._dateString =
+        _remarks = document.get('remarks');
+        _password = document.get('password');
+        _dateString =
             DateFormat.MMMMd().format(document.get('date').toDate()).toString();
         this._timeString =
             DateFormat.jm().format(document.get('time').toDate()).toString();
@@ -78,7 +78,7 @@ class _AlarmRingPageState extends State<AlarmRingPage> {
     return WillPopScope(
       onWillPop: () => _exitApp(context),
       child: Scaffold(
-        backgroundColor: Color(0xffddd3ee),
+        backgroundColor: const Color(0xffddd3ee),
         body: SafeArea(
           child: Center(
             child: Padding(
@@ -88,23 +88,23 @@ class _AlarmRingPageState extends State<AlarmRingPage> {
                 children: [
                   Text(
                     " $_dateString ",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 22,
                     ),
                   ),
                   Text(
                     " $_timeString ",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 30,
                     ),
                   ),
                   Text(
                     " $_remarks ",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 70,
                   ),
                   Align(
@@ -121,7 +121,7 @@ class _AlarmRingPageState extends State<AlarmRingPage> {
                       enableInteractiveSelection: false,
                       decoration: InputDecoration(
                           labelText: 'Password',
-                          labelStyle: TextStyle(
+                          labelStyle: const TextStyle(
                             fontSize: 13,
                           ),
                           enabledBorder: OutlineInputBorder(
@@ -140,7 +140,7 @@ class _AlarmRingPageState extends State<AlarmRingPage> {
                     ),
                   ),
                   RaisedButton(
-                    color: Color.fromRGBO(92, 184, 92, 5),
+                    color: const Color.fromRGBO(92, 184, 92, 5),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
@@ -149,7 +149,7 @@ class _AlarmRingPageState extends State<AlarmRingPage> {
                         Navigator.popAndPushNamed(context, '/');
                       }
                     },
-                    child: Text(
+                    child: const Text(
                       'Submit',
                       style: TextStyle(
                         color: Colors.white,
